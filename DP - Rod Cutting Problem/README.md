@@ -1,34 +1,26 @@
-<h2><a href="https://leetcode.com/problems/top-k-frequent-words">692. Top K Frequent Words</a></h2><h3>Medium</h3><hr><p>Given an array of strings <code>words</code> and an integer <code>k</code>, return <em>the </em><code>k</code><em> most frequent strings</em>.</p>
+Problem
+  
+Cut The Rod To Maximize Profit
+Given the prices for rod pieces of every size between 1 inch and n inches, find the maximum total profit that can be made by cutting an n inches long rod inch into pieces.
 
-<p>Return the answer <strong>sorted</strong> by <strong>the frequency</strong> from highest to lowest. Sort the words with the same frequency by their <strong>lexicographical order</strong>.</p>
+Example
+{
+"price ": [1, 5, 8, 9]
+}
+Output:
 
-<p>&nbsp;</p>
-<p><strong class="example">Example 1:</strong></p>
+10
+The rod can be cut in the ways given below:
 
-<pre>
-<strong>Input:</strong> words = [&quot;i&quot;,&quot;love&quot;,&quot;leetcode&quot;,&quot;i&quot;,&quot;love&quot;,&quot;coding&quot;], k = 2
-<strong>Output:</strong> [&quot;i&quot;,&quot;love&quot;]
-<strong>Explanation:</strong> &quot;i&quot; and &quot;love&quot; are the two most frequent words.
-Note that &quot;i&quot; comes before &quot;love&quot; due to a lower alphabetical order.
-</pre>
+1 + 1 + 1 + 1 inches will cost price[0] + price[0] + price[0] + price[0] = 4
+1 + 1 + 2 inches will cost price[0] + price[0] + price[1] = 7
+1 + 3 inches will cost price[0] + price[2] = 9
+2 + 2 inches will cost price[1] + price[1] = 10
+One piece of 4 inches will cost price[3] = 9
+The maximum profit is obtained by cutting it into two pieces 2 inches each.
 
-<p><strong class="example">Example 2:</strong></p>
+Notes
+Constraints:
 
-<pre>
-<strong>Input:</strong> words = [&quot;the&quot;,&quot;day&quot;,&quot;is&quot;,&quot;sunny&quot;,&quot;the&quot;,&quot;the&quot;,&quot;the&quot;,&quot;sunny&quot;,&quot;is&quot;,&quot;is&quot;], k = 4
-<strong>Output:</strong> [&quot;the&quot;,&quot;is&quot;,&quot;sunny&quot;,&quot;day&quot;]
-<strong>Explanation:</strong> &quot;the&quot;, &quot;is&quot;, &quot;sunny&quot; and &quot;day&quot; are the four most frequent words, with the number of occurrence being 4, 3, 2 and 1 respectively.
-</pre>
-
-<p>&nbsp;</p>
-<p><strong>Constraints:</strong></p>
-
-<ul>
-	<li><code>1 &lt;= words.length &lt;= 500</code></li>
-	<li><code>1 &lt;= words[i].length &lt;= 10</code></li>
-	<li><code>words[i]</code> consists of lowercase English letters.</li>
-	<li><code>k</code> is in the range <code>[1, The number of <strong>unique</strong> words[i]]</code></li>
-</ul>
-
-<p>&nbsp;</p>
-<p><strong>Follow-up:</strong> Could you solve it in <code>O(n log(k))</code> time and <code>O(n)</code> extra space?</p>
+1 <= n <= 103
+1 <= price of any sized piece of the rod <= 105
