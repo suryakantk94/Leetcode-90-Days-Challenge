@@ -14,7 +14,8 @@ void helper(string &s, int idx, string slate, vector<string> &result)
 
     // Inclusion
     //  cout<<"UP"<<up;
-    helper(s, idx + 1, slate + s[idx], result);
+    char down = tolower(s[idx]);
+    helper(s, idx + 1, slate + down, result);
 
     // Exclusion
     char up = toupper(s[idx]);
