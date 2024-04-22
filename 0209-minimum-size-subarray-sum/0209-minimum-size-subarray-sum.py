@@ -7,6 +7,8 @@ class Solution(object):
         """
 
         #Variable Length Sliding Window
+        # TC - O(n) as the left pointer in while loop is moving constantly maximum till the end of the array for all i, the left pointer is NOT starting from start for all i everytime 
+        # SC - O(1)
 
         # DC As the ith index, i will contribute myself to the target sum, if adding me makes the target, i will take the count 
         # and update the global min count or the length of my subarray with target
