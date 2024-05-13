@@ -6,34 +6,36 @@
 #         self.right = right
 
 # bottom up dfs
-def dfs(node, dia):
+def dfs(node, globalDia):
 
     # common area
     # leaf node
     if node.left is None and node.right is None:
         return 1
+
     # internal node
     leftDia, rightDia = 0, 0
 
     if node.left is not None:
-        # leftDia += 1
-        leftDia = dfs(node.left, dia)
-        # dia[0] = leftDia + rightDia 
+        leftDia = dfs(node.left, globalDia)
+        # localDiameter = leftDia + rightDia
 
     if node.right is not None:
-        # rightDia += 1
-        rightDia = dfs(node.right, dia)
-        # dia[0] = rightDia + leftDia 
+        rightDia = dfs(node.right, globalDia)
+        # localDiameter = leftDia + rightDia
 
     # before returning
-    dia[0] = max((leftDia + rightDia), dia[0]) 
+    localDiameter = leftDia + rightDia
+    globalDia[0] = max((localDiameter), globalDia[0]) 
+
+    # globalDia[0] = max((leftDia + rightDia), globalDia[0]) 
 
     # return area
     if leftDia >= rightDia:
-        # dia[0] = leftDia + rightDia
+        # localDiameter = leftDia + rightDia
         return leftDia + 1
     else:
-        # dia[0] = rightDia + leftDia
+        # localDiameter = leftDia + rightDia
         return rightDia + 1
     
 
@@ -47,8 +49,8 @@ class Solution(object):
         # handle null tree
         if not root:
             return 0
-        dia = [0]
+        globalDia = [0]
 
-        dfs(root, dia)
-        return dia[0]
+        dfs(root, globalDia)
+        return globalDia[0]
         
