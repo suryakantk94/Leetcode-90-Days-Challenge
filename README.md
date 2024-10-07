@@ -36,4 +36,12 @@ Daily problem-solving and LeetCode questions to ace the coding interview!
 |  |
 | ------- |
 | [0257-binary-tree-paths](https://github.com/suryakantk94/Leetcode-90-Days-Challenge/tree/master/0257-binary-tree-paths) |
+## Linked List
+|  |
+| ------- |
+| [0206-reverse-linked-list](https://github.com/suryakantk94/Leetcode-90-Days-Challenge/tree/master/0206-reverse-linked-list) |
+## Recursion
+|  |
+| ------- |
+| [0206-reverse-linked-list](https://github.com/suryakantk94/Leetcode-90-Days-Challenge/tree/master/0206-reverse-linked-list) |
 <!---LeetCode Topics End-->
